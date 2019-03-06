@@ -44,8 +44,8 @@ public class Hangman {
 			if(!Utils.revealAsterisks(encryptedWord,word,letter)) errors +=1;	
 		  System.out.println(new String(encryptedWord) +" | Errors: " + errors);
 			
-			if(errors == MAX_ERRORS) loser = true;
-		  if(Utils.isRevealed(encryptedWord)) winner = true;
+			loser = errors == MAX_ERRORS;
+		  winner = Utils.isRevealed(encryptedWord);
 		}
 		System.out.println(winner ? "You win!!" : "Game over!!");
 		in.close();
