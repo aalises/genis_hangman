@@ -1,3 +1,6 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Utils { 	
 	/**
 	@param wordSize Longitud de la palabra secreta	
@@ -47,19 +50,30 @@ public class Utils {
 	 * @return Devuelve true si la letra existe en la palabra y no ha sido ya revelada. En caso contrario devuelve false.
 	 */	
 	static boolean revealAsterisks(char[] encryptedWord,char[] word,char letter) {
-		boolean letterGame=true;
-		int contadorTrue=0;
+		boolean letterExists = false;
 		int encryptedWordSize = encryptedWord.length;
 		
 		for(int i = 0;i<encryptedWordSize;i++){
 			if(word[i]==letter && encryptedWord[i]!=letter){
 				encryptedWord[i]=letter;
-				contadorTrue=1;
+				letterExists = true;
 			} 
 		}
-			if(contadorTrue==0){
-				letterGame=false;
-			}	
-		return letterGame;
-	}
+		return letterExists;
+  }
+  
+  /**
+	 * 
+	 * @param word Palabra de input
+	 * @return Devuelve true si la palabra contiene solo letras (sin números ni caracteres especiales). En caso contrario devuelve false.
+	 */	
+  static boolean validateWord(String word){
+    Pattern pattern = Pattern.compile("[a-z]*");
+    Matcher matcher = pattern.matcher(word);
+    return matcher.matches();
+  }
+
+  static void printSpaces(int numSpaces){
+    for(int i = 0; i< numSpaces; i++) System.out.println("");
+  }
 }
