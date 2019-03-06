@@ -1,1 +1,3 @@
-# genis_hangman
+# Genis Hangman
+
+És bona Niiiiiis!
