@@ -42,7 +42,7 @@ public class Hangman {
 			} 
 
 			if(!Utils.revealAsterisks(encryptedWord,word,letter)) errors +=1;	
-		  System.out.println(new String(encryptedWord) +" | Errors: " + errors);
+		  System.out.println(new String(encryptedWord) + " | Errors: " + errors);
 			
 			loser = errors == MAX_ERRORS;
 		  winner = Utils.isRevealed(encryptedWord);

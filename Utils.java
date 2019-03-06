@@ -71,8 +71,12 @@ public class Utils {
     Pattern pattern = Pattern.compile("[a-z]*");
     Matcher matcher = pattern.matcher(word);
     return matcher.matches();
-  }
-
+	}
+	
+	/**
+	 * 
+	 * @param numSpaces número de spacios a los que hacer print
+	 */	
   static void printSpaces(int numSpaces){
     for(int i = 0; i< numSpaces; i++) System.out.println("");
   }
